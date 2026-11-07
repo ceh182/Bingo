@@ -2,74 +2,90 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Wedding Reception Bingo</title>
+<title>Wedding Bingo</title>
+
 <style>
-body {
+body{
     font-family: Arial, sans-serif;
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
+    text-align:center;
+    margin:20px;
 }
-.grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
+
+table{
+    margin:auto;
+    border-collapse:collapse;
 }
-.square {
-    border: 1px solid #ccc;
-    padding: 20px 10px;
-    cursor: pointer;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+td{
+    width:120px;
+    height:80px;
+    border:2px solid #333;
+    padding:10px;
+    cursor:pointer;
+    text-align:center;
+    vertical-align:middle;
 }
-.marked {
-    background-color: #8ecae6;
-    color: white;
+
+.marked{
+    background-color:#7db7ff;
+    color:white;
+    font-weight:bold;
 }
 </style>
+
 </head>
 <body>
 
 <h1>Wedding Reception Bingo</h1>
 
-<div class="grid">
-    <div class="square">Celebrate</div>
-    <div class="square">Dancing Queen</div>
-    <div class="square">Hot In Herre</div>
-    <div class="square">Low</div>
-    <div class="square">Mr. Brightside</div>
+<table>
+<tr>
+<td>Celebrate</td>
+<td>Dancing Queen</td>
+<td>Hot In Herre</td>
+<td>Low</td>
+<td>Mr. Brightside</td>
+</tr>
 
-    <div class="square">Yeah!</div>
-    <div class="square">Shut Up and Dance</div>
-    <div class="square">Don't Stop Believin'</div>
-    <div class="square">I Wanna Dance With Somebody</div>
-    <div class="square">September</div>
+<tr>
+<td>Yeah!</td>
+<td>Shut Up and Dance</td>
+<td>Don't Stop Believin'</td>
+<td>I Wanna Dance With Somebody</td>
+<td>September</td>
+</tr>
 
-    <div class="square">Cupid Shuffle</div>
-    <div class="square">I Gotta Feeling</div>
-    <div class="square">FREE SPACE</div>
-    <div class="square">Come On Eileen</div>
-    <div class="square">All The Small Things</div>
+<tr>
+<td>Cupid Shuffle</td>
+<td>I Gotta Feeling</td>
+<td>FREE SPACE</td>
+<td>Come On Eileen</td>
+<td>All The Small Things</td>
+</tr>
 
-    <div class="square">Sweet Caroline</div>
-    <div class="square">Gasolina</div>
-    <div class="square">Love Story</div>
-    <div class="square">24K Magic</div>
-    <div class="square">Crazy In Love</div>
+<tr>
+<td>Sweet Caroline</td>
+<td>Gasolina</td>
+<td>Love Story</td>
+<td>24K Magic</td>
+<td>Crazy In Love</td>
+</tr>
 
-    <div class="square">The Middle</div>
-    <div class="square">Levitating</div>
-    <div class="square">Party In The USA</div>
-    <div class="square">Man! I Feel Like a Woman!</div>
-    <div class="square">Bingo!</div>
-</div>
+<tr>
+<td>The Middle</td>
+<td>Levitating</td>
+<td>Party In The USA</td>
+<td>Man! I Feel Like A Woman!</td>
+<td>BINGO!</td>
+</tr>
+</table>
 
 <script>
-document.querySelectorAll('.square').forEach(square => {
-  square.addEventListener('click', () => {
-    square.classList.toggle('marked');
+const cells = document.querySelectorAll("td");
+
+cells.forEach(cell => {
+  cell.addEventListener("click", function() {
+      this.classList.toggle("marked");
   });
 });
 </script>
