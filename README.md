@@ -1,4 +1,3 @@
-# Bingo
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,3 +70,9 @@ body {
 document.querySelectorAll('.square').forEach(square => {
   square.addEventListener('click', () => {
     square.classList.toggle('marked');
+  });
+});
+</script>
+
+</body>
+</html>
