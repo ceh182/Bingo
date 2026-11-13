@@ -37,56 +37,94 @@ td {
 <body>
 
 <h1>Wedding Reception Bingo</h1>
+<label for="cardSelect">Select Your Card:</label>
+<select id="cardSelect">
+  <option value="0">Card 1</option>
+  <option value="1">Card 2</option>
+  <option value="2">Card 3</option>
+  <option value="3">Card 4</option>
+</select>
 
-<table>
-<tr>
-<td>Celebrate</td>
-<td>Dancing Queen</td>
-<td>Hot In Herre</td>
-<td>Low</td>
-<td>Mr. Brightside</td>
-</tr>
+<br><br>
 
-<tr>
-<td>Yeah!</td>
-<td>Shut Up and Dance</td>
-<td>Don't Stop Believin'</td>
-<td>I Wanna Dance With Somebody</td>
-<td>September</td>
-</tr>
-
-<tr>
-<td>Cupid Shuffle</td>
-<td>I Gotta Feeling</td>
-<td>FREE SPACE</td>
-<td>Come On Eileen</td>
-<td>All The Small Things</td>
-</tr>
-
-<tr>
-<td>Sweet Caroline</td>
-<td>Gasolina</td>
-<td>Love Story</td>
-<td>24K Magic</td>
-<td>Crazy In Love</td>
-</tr>
-
-<tr>
-<td>The Middle</td>
-<td>Levitating</td>
-<td>Party In The USA</td>
-<td>Man! I Feel Like A Woman!</td>
-<td>Levitating</td>
-</tr>
-</table>
-
+<table id="bingoTable"></table>
 <script>
-document.querySelectorAll("td").forEach(cell => {
-  cell.addEventListener("click", () => {
-    cell.classList.toggle("marked");
-  });
-});
-</script>
 
-</body>
-</html>
+const cards = [
+
+  // Card 1
+  [
+    ["Celebrate","Dancing Queen","Hot In Here","Low","Mr. Brightside"],
+    ["Yeah!","Shut Up and Dance","Don't Stop Believin'","I Wanna Dance With Somebody","September"],
+    ["Cupid Shuffle","I Gotta Feeling","FREE SPACE","Come On Eileen","All The Small Things"],
+    ["Sweet Caroline","Gasolina","Love Story","24K Magic","Crazy In Love"],
+    ["The Middle","Levitating","Party In The USA","Man! I Feel Like A Woman!","DJ Got Us Fallin' In Love"]
+  ],
+
+  // Card 2
+  [
+    ["The Middle","24 Karat Magic","Man! I Feel Like A Woman!","Levitating","Don't Stop 'Til You Get Enough"],
+    ["Party In The USA","Yeah!","Shut Up And Dance","Don't Stop Believin'","I Wanna Dance With Somebody"],
+    ["Hips Don't Lie","I Gotta Feeling","FREE SPACE","Come On Eileen","All The Small Things"],
+    ["Dynamite","Dancing Queen","Hot In Here","Item R","Low"],
+    ["Mr. Brightside","Sweet Caroline","Gasolina","Fireball","September"]
+  ],
+
+  // Card 3
+  [
+    ["Levitating","Forever","Man! I Feel Like A Woman!","Shut Up and Dance","Crazy In Love"],
+    ["Don't Stop Believin'","Yeah!","September","Uptown Funk","Fireball"],
+    ["Come On Eileen","I Gotta Feeling","FREE SPACE","Cupid Shuffle","All The Small Things"],
+    ["Get Low","Dancing Queen","Hot In Here","Celebrate","Mr. Brightside"],
+    ["Love Story","Gasolina","Wobble","Sweet Caroline","The Middle"]
+  ],
+
+  // Card 4
+  [
+    ["DJ Got Us Fallin' In Love","Forever","Man! I Feel Like A Woman!","Shut Up And Dance","Love Story"],
+    ["Don't Stop Believin'","Fireball","Celebrate","Dynamite","Don't Stop 'Til You Get Enough"],
+    ["Brown Eyed Girl","I Gotta Feeling","FREE SPACE","Cha Cha Slide","All The Small Things"],
+    ["Get Low","Dancing Queen","Hot In Here","September","Mr. Brightside"],
+    ["Uptown Funk","Gasolina","Wobble","Sweet Caroline","I Wanna Dance With Somebody"]
+  ]
+
+];
+
+function buildCard(cardNumber) {
+
+  const table = document.getElementById("bingoTable");
+
+  table.innerHTML = "";
+
+  cards[cardNumber].forEach(rowData => {
+
+    const row = document.createElement("tr");
+
+    rowData.forEach(text => {
+
+      const cell = document.createElement("td");
+
+      cell.textContent = text;
+
+      cell.addEventListener("click", function() {
+        this.classList.toggle("marked");
+      });
+
+      row.appendChild(cell);
+
+    });
+
+    table.appendChild(row);
+
+  });
+
+}
+
+document.getElementById("cardSelect")
+  .addEventListener("change", function() {
+      buildCard(this.value);
+  });
+
+buildCard(0);
+
+</script>
