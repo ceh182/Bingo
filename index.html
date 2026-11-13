@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Wedding Bingo</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td {
+  width: 120px;
+  height: 80px;
+  border: 2px solid #333;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.marked {
+  background-color: #7db7ff;
+  color: white;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Wedding Reception Bingo</h1>
+
+<table>
+<tr>
+<td>Celebrate</td>
+<td>Dancing Queen</td>
+<td>Hot In Herre</td>
+<td>Low</td>
+<td>Mr. Brightside</td>
+</tr>
+
+<tr>
+<td>Yeah!</td>
+<td>Shut Up and Dance</td>
+<td>Don't Stop Believin'</td>
+<td>I Wanna Dance With Somebody</td>
+<td>September</td>
+</tr>
+
+<tr>
+<td>Cupid Shuffle</td>
+<td>I Gotta Feeling</td>
+<td>FREE SPACE</td>
+<td>Come On Eileen</td>
+<td>All The Small Things</td>
+</tr>
+
+<tr>
+<td>Sweet Caroline</td>
+<td>Gasolina</td>
+<td>Love Story</td>
+<td>24K Magic</td>
+<td>Crazy In Love</td>
+</tr>
+
+<tr>
+<td>The Middle</td>
+<td>Levitating</td>
+<td>Party In The USA</td>
+<td>Man! I Feel Like A Woman!</td>
+<td>Levitating</td>
+</tr>
+</table>
+
+<script>
+document.querySelectorAll("td").forEach(cell => {
+  cell.addEventListener("click", () => {
+    cell.classList.toggle("marked");
+  });
+});
+</script>
+
+</body>
+</html>
