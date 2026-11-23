@@ -5,34 +5,144 @@
 <title>Wedding Bingo</title>
 
 <style>
+
+/* Mobile scaling */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Georgia", serif;
-    background-color: #fdf8f3;
-    color: #4a3f35;
+    margin: 0;
+    padding: 20px;
+    background-color: #FAF7F2;
+    color: #4B4B4B;
+
+    font-family: Georgia, "Times New Roman", serif;
+
     text-align: center;
-    margin: 30px;
 }
 
+/* Header */
+h1 {
+    color: #B76E79;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7A7A7A;
+    margin-bottom: 20px;
+}
+
+/* Dropdown */
+select {
+    padding: 12px 18px;
+    font-size: 1rem;
+
+    border: 2px solid #D7BFAE;
+    border-radius: 12px;
+
+    background-color: white;
+    color: #4B4B4B;
+
+    margin-bottom: 20px;
+}
+
+/* Bingo table */
 table {
-  margin: auto;
-  border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    background-color: white;
+
+    border-radius: 12px;
+    overflow: hidden;
 }
 
+/* Bingo squares */
 td {
-  width: 120px;
-  height: 80px;
-  border: 2px solid #333;
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
-  vertical-align: middle;
+    border: 2px solid #D7BFAE;
+
+    width: 20%;
+    height: 90px;
+
+    padding: 10px;
+
+    font-size: 0.95rem;
+    line-height: 1.3;
+
+    text-align: center;
+    vertical-align: middle;
+
+    cursor: pointer;
+
+    background-color: #FFFFFF;
+
+    transition: all 0.2s ease;
 }
 
-.marked {
-  background-color: #7db7ff;
-  color: white;
-  font-weight: bold;
+/* Hover effect */
+td:hover {
+    background-color: #F7ECEE;
 }
+
+/* Selected squares */
+.marked {
+    background-color: #B76E79 !important;
+    color: white;
+    font-weight: bold;
+}
+
+/* FREE SPACE */
+.free-space {
+    background-color: #A3B18A;
+    color: white;
+    font-weight: bold;
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    td {
+        height: 70px;
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+
+    select {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+
+    td {
+        height: 60px;
+        font-size: 0.65rem;
+        padding: 4px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
+
+</style>
 </style>
 </head>
 
